@@ -9,18 +9,13 @@ class MembersController extends BaseController
 {
     protected $layout = 'members.phtml';
     
-    function indexAction()
+    function settingsAction()
     {
+        $user = $this->getCurrentUser();
         
-    }
-    
-    function placesAction()
-    {
-        
-    }
-    
-    function placescreateAction()
-    {
-        
+        // return accounts
+        return $this->returnArray(array(
+            'user' => $user->toArray(),
+        ));
     }
 }

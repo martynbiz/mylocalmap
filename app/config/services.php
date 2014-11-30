@@ -10,9 +10,12 @@
 */
 
 return array(
-    'services' => array(
-        'controllers.home' => new App\Controller\HomeController(),
+    'services' => array(    
+        'controllers.accounts' => new App\Controller\AccountsController(),
+        'controllers.transactions' => new App\Controller\TransactionsController(),
         'controllers.members' => new App\Controller\MembersController(),
+        
+        'validator' => new MartynBiz\Validator(),
         
         'View' => function() {
             $engine = new Handlebars\Handlebars();

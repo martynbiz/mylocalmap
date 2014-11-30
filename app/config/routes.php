@@ -18,24 +18,107 @@ return array(
                 'action' => 'about',
             ),
         ),
+        
+        // members
+        
         '/members' => array(
-            '/' => array(
+            '/settings' => array(
                 'GET' => array(
                     'controller' => 'members',
+                    'action' => 'settings',
+                ),
+            ),
+        ),
+        
+        // accounts routes
+        
+        '/accounts' => array(
+            '/' => array(
+                'GET' => array(
+                    'controller' => 'accounts',
                     'action' => 'index',
                 ),
             ),
-            '/places' => array(
+            '/(\d+)' => array(
+                'GET' => array(
+                    'controller' => 'accounts',
+                    'action' => 'show',
+                ),
+            ),
+            '/create' => array(
+                'GET' => array(
+                    'controller' => 'accounts',
+                    'action' => 'create',
+                ),
+                'POST' => array(
+                    'controller' => 'accounts',
+                    'action' => 'create',
+                ),
+            ),
+            '/(\d+)/edit' => array(
+                'GET' => array(
+                    'controller' => 'accounts',
+                    'action' => 'edit',
+                ),
+                'PUT' => array(
+                    'controller' => 'accounts',
+                    'action' => 'edit',
+                ),
+            ),
+            '/(\d+)/delete' => array(
+                'GET' => array(
+                    'controller' => 'accounts',
+                    'action' => 'delete',
+                ),
+                'DELETE' => array(
+                    'controller' => 'accounts',
+                    'action' => 'delete',
+                ),
+            ),
+            
+            // transactions routes
+            
+            '/(\d+)/transactions' => array(
                 '/' => array(
                     'GET' => array(
-                        'controller' => 'members',
-                        'action' => 'places',
+                        'controller' => 'transactions',
+                        'action' => 'index',
+                    ),
+                ),
+                '/(\d+)' => array(
+                    'GET' => array(
+                        'controller' => 'transactions',
+                        'action' => 'show',
                     ),
                 ),
                 '/create' => array(
                     'GET' => array(
-                        'controller' => 'members',
-                        'action' => 'placescreate',
+                        'controller' => 'transactions',
+                        'action' => 'create',
+                    ),
+                    'POST' => array(
+                        'controller' => 'transactions',
+                        'action' => 'create',
+                    ),
+                ),
+                '/(\d+)/edit' => array(
+                    'GET' => array(
+                        'controller' => 'transactions',
+                        'action' => 'edit',
+                    ),
+                    'PUT' => array(
+                        'controller' => 'transactions',
+                        'action' => 'edit',
+                    ),
+                ),
+                '/(\d+)/delete' => array(
+                    'GET' => array(
+                        'controller' => 'transactions',
+                        'action' => 'delete',
+                    ),
+                    'DELETE' => array(
+                        'controller' => 'transactions',
+                        'action' => 'delete',
                     ),
                 ),
             ),

@@ -2,7 +2,7 @@
 
 namespace App\View;
 
-class View extends \MartynBiz\View
+class View extends \MartynBiz\MVC\View
 {
     /**
      * Render the template within the layout
@@ -17,7 +17,7 @@ class View extends \MartynBiz\View
             
             // the checksum is used on the front end to trigger a fresh reload
             // cases such as changing the layout should trigger a fresh reload
-            $data['checksum'] = $this->checksum();
+            $data['_CHECKSUM'] = $this->checksum();
             
             return json_encode($data);
         }

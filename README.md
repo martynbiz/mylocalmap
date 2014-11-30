@@ -154,8 +154,7 @@ And that's it. The skeleton app has everything it needs to handle even the templ
 
 #TODO
 
+- 
 - create/test default Martyn\View\View which renders PHP layouts/scripts
 - create/test App\View\Handlebars
 - Composer
-- Validation
-- Security - xsfr
